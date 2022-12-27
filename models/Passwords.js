@@ -9,27 +9,43 @@ class Passwords extends Model {
 Passwords.init(
     {
         id: {
-
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true,
         },
         password: {
-
+        type: DataTypes.STRING,
+        allowNull:false,
         },
         title: {
-
+            type: DataTypes.STRING,
+            allowNull: false,
         },
         username: {
-
+            type: DataTypes.STRING,
+            allowNull:false,
         },
         initVector: {
-
+            type: DataTypes.STRING,
+            allowNull:false,
         },
         securityKey: {
-
+            type: DataTypes.STRING,
+            allowNull: false,
         },
         user_id: {
-            
-        }
-    }
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+    },
+    {
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'Passwords',
+      }
 );
 
 module.exports = Passwords;
