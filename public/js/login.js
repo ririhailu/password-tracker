@@ -2,6 +2,10 @@ document
     .querySelector('.loginForm')
     .addEventListener('submit', loginFormHandler);
 
+    document
+    .querySelector('.signUpForm')
+    .addEventListener('submit', loginFormHandler);
+
 const loginFormHandler = async (event) => {
     event.preventDefault();
 
@@ -11,26 +15,35 @@ const loginFormHandler = async (event) => {
     if (userName && password) {
         const response = await fetch('/api/users/login', {
             method: 'POST',
-            body: JSON.stringify({userName, password}),
+            body: JSON.stringify({ userName, password }),
             headers: { 'Content-Type': 'application/json'},
         });
 
         if (response.ok) {
-            document.location.replace('');
+            document.location.replace('/dashboard');
         } else {
             alert('Invalid Login Information!');
         }
     }
 };
 
-//TODO: Handle signup form logic
+const signupFormHandler = async (event) => {
+    event.preventDefault();
 
-//TODO: 
+    const userName = document.querySelector('#username').value.trim();
+    const password = document.querySelector('#password').value.trim();
 
-//TODO:
+    if (userName && password) {
+        const response = await fetch('/api/users', {
+            method: 'POST',
+            body: JSON.stringify({ userName, password }),
+            headers: { 'Content-Type': 'application/json'},
+        });
 
-//TODO:
-
-//TODO:
-
-
+        if (response.ok) {
+            document.location.replace('/dashboard')
+        } else {
+            alert('Invalid field input. Please try again.');
+        }
+    }
+};
