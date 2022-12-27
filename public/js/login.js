@@ -1,16 +1,31 @@
-//TODO: Handle the login form logic
+document
+    .querySelector('.loginForm')
+    .addEventListener('submit', loginFormHandler);
 
-//TODO: grab values of input
+const loginFormHandler = async (event) => {
+    event.preventDefault();
 
-//TODO: Post request sending email and password in body
+    const userName = document.querySelector('#username').value.trim();
+    const password = document.querySelector('#password').value.trim();
 
-//TODO:
+    if (userName && password) {
+        const response = await fetch('/api/users/login', {
+            method: 'POST',
+            body: JSON.stringify({userName, password}),
+            headers: { 'Content-Type': 'application/json'},
+        });
 
-//TODO:
+        if (response.ok) {
+            document.location.replace('');
+        } else {
+            alert('Invalid Login Information!');
+        }
+    }
+};
 
 //TODO: Handle signup form logic
 
-//TODO:
+//TODO: 
 
 //TODO:
 
