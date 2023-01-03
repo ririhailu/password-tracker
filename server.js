@@ -6,6 +6,7 @@ const path = require('path');
 
 
 const exphbs = require('express-handlebars');
+const hbs = exphbs.create({});
 
 
 const session = require('express-session');
