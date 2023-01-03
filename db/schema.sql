@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS password_db;
+
+CREAT DATABASE password_db;
