@@ -6,7 +6,7 @@ router.get('/', (req, res) => {
     console.log(req.session);
 
     Password.findAll({
-        attributes: ['id', 'username', 'user_id', 'password', 'title', 'initVector', 'securitykey']
+        attributes: ['id', 'username', 'user_id', 'password', 'title', 'initVector', 'securityKey']
     }
     ).then(passwordDB => {
         console.log(passwordDB);

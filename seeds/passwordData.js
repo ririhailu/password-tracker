@@ -7,10 +7,10 @@ const passwordData = [
         username: 'test3',
         initVector:'crypto.randomBytes(16)',
         securityKey: 'crypto.randomBytes(32)',
-        user_id: 'test4',
+        user_id: '1',
     },
 ];
 
-const seedPassword = () => Passwords.bulkcreate(passwordData);
+const seedPassword = () => Passwords.bulkCreate(passwordData);
 
 module.exports = seedPassword;
