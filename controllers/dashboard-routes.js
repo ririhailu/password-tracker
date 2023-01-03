@@ -1,18 +1,19 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Password } = require('../models');
+const { Passwords } = require('../models');
 
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
     console.log(req.session);
-
-    Password.findAll({
+    Passwords.findAll({
         attributes: ['id', 'username', 'user_id', 'password', 'title', 'initVector', 'securityKey']
     }
     ).then(passwordDB => {
         console.log(passwordDB);
         const password = passwordDB.map(password => password.get({ plain: true }));
-
-        res.render('dashboard', { password, admin: req.session.admin });
+        console.log(password);
+        // admin: req.session.admin
+        res.render('dashboard', {password});
+        // res.send(password);
     }).catch(err => {
         console.log(err);
         res.status(500).json(err);
@@ -24,10 +25,10 @@ router.get('/new', (req, res) => {
 });
 
 
-logoutRouter.get('/', (req, res) => {
-    req.logout();
-    return res.redirect(HOME);
-});
+// logoutRouter.get('/', (req, res) => {
+//     req.logout();
+//     return res.redirect(HOME);
+// });
 
 
 
