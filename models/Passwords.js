@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
-const { createHmac } = await import('node:crypto');
+const { createHmac } = import('node:crypto');
 const sequelize = require('../config/connection');
 
 class Passwords extends Model {
@@ -35,7 +35,7 @@ Passwords.init(
             allowNull: false,
         },
         user_id: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             allowNull: false,
         },
     },
