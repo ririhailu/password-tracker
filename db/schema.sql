@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS passwordTracker_db;
+DROP DATABASE IF EXISTS passwordtracker_db;
 
-CREATE DATABASE passwordTracker_db;
+CREATE DATABASE passwordtracker_db;
