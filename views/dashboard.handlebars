@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="row justify-content-center">
       <div class="col-5">
-        {{!-- {{#if loggedIn}} --}}
+        {{#if loggedIn}}
         <h1>{{log this}}</h1>
         <table class="table table-striped m-0 border">
           <thead>
@@ -30,9 +30,9 @@
             </tr>
           </tbody>
         </table>
-        {{!-- {{else}} --}}
+        {{else}}
         <a href="/login">You must login first to view saved passwords.</a>
-        {{!-- {{/if}} --}}
+        {{/if}}
       </div>
     </div>
   </div>
