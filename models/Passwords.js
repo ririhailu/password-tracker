@@ -35,7 +35,7 @@ Passwords.init(
             allowNull: false,
         },
         user_id: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             allowNull: false,
         },
     },
