@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
-const { createHmac } = await import('node:crypto');
+const { createHmac } = import('node:crypto');
 const sequelize = require('../config/connection');
 
 class User extends Model {
