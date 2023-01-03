@@ -2,11 +2,11 @@ const { Model, DataTypes } = require('sequelize');
 const { createHmac } = await import('node:crypto');
 const sequelize = require('../config/connection');
 
-class User extends Model {
-   
+class Passwords extends Model {
+
 }
 
-User.init(
+Passwords.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -14,29 +14,38 @@ User.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        user_name: {
+        password: {
+        type: DataTypes.STRING,
+        allowNull:false,
+        },
+        title: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        user_password: {
+        username: {
+            type: DataTypes.STRING,
+            allowNull:false,
+        },
+        initVector: {
+            type: DataTypes.STRING,
+            allowNull:false,
+        },
+        securityKey: {
             type: DataTypes.STRING,
             allowNull: false,
-            validate: {
-                len: [8],
-            }
-        }
+        },
+        user_id: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
     },
     {
-        hooks: {
-
-        },
         sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'User',
-
-    }
+        modelName: 'Passwords',
+      }
 );
 
-module.exports = User;
+module.exports = Passwords;
