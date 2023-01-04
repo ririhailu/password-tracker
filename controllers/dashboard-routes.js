@@ -8,10 +8,8 @@ router.get('/', async (req, res) => {
     }
     ).then(passwordDB => {
         const password = passwordDB.map(password => password.get({ plain: true }));
-        // admin: req.session.admin
-        // const passwordResults = password[0]
-        res.render('dashboard', {password});
-        // res.send(password);
+        const loggedIn = req.session.logged_in
+        res.render('dashboard', {password, loggedIn});
     }).catch(err => {
         console.log(err);
         res.status(500).json(err);

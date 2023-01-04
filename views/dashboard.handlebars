@@ -3,8 +3,9 @@
     <div class="row justify-content-center">
       <div class="col-5">
         {{!-- TODO bring this back after session works --}}
-        {{!-- {{#if loggedIn}} --}}
+        {{#if loggedIn}}
         <table class="table table-striped m-0 border">
+          {{log loggedIn}}
           {{#if password}}
            <thead>
             <tr>
@@ -40,9 +41,9 @@
         <a class="btn btn-danger text-align-center" href="dashboard/new">Add Password</a>
         {{/if}}
         {{!-- TODO bring this back after session works --}}
-        {{!-- {{else}} --}}
-        {{!-- <a href="/login">You must login first to view saved passwords.</a> --}}
-        {{!-- {{/if}} --}}
+        {{else}}
+        <a href="/login">You must login first to view saved passwords.</a>
+        {{/if}}
       </div>
     </div>
   </div>
