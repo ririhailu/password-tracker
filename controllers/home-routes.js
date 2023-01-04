@@ -5,7 +5,7 @@ const { User } = require('../models');
 
 
 router.get('/', (req, res) => {
-  if (req.session.loggedIn) {
+  if (req.session.logged_in) {
     res.redirect('/dashboard');
     return;
   } else {
@@ -24,7 +24,7 @@ router.get('/password', (req, res) => {
 
 // Login
 router.get('/login', (req, res) => {
-  if (req.session.loggedIn) {
+  if (req.session.logged_in) {
     res.redirect('/dashboard');
     return;
   } else {
@@ -34,7 +34,7 @@ router.get('/login', (req, res) => {
 
 // sign up input
 router.get('/signup', (req, res) => {
-  if (req.session.loggedIn) {
+  if (req.session.logged_in) {
     res.redirect('/dashboard');
     return;
   } else {
