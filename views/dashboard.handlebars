@@ -2,10 +2,11 @@
   <div class="container-fluid">
     <div class="row justify-content-center">
       <div class="col-5">
-        {{#if loggedIn}}
-        <h1>{{log this}}</h1>
+        {{!-- TODO bring this back after session works --}}
+        {{!-- {{#if loggedIn}} --}}
         <table class="table table-striped m-0 border">
-          <thead>
+          {{#if password}}
+           <thead>
             <tr>
               <th class="text-white bg-danger" scope="col">Website</th>
               <th class="text-white bg-danger" scope="col">Username</th>
@@ -13,7 +14,14 @@
             </tr>
           </thead>
           <tbody>
+          {{#each password}}
             <tr>
+              <td><a href="{{this.title}}">{{this.title}}</a></td>
+              <td>{{this.username}}</td>
+              <td type="password">{{this.password}}<button class="btn btn-danger ms-3">Copy</button></td>
+            </tr>
+            {{!-- This is just extra table content to test appearance --}}
+            {{!-- <tr>
               <td><a href="https://www.instagram.com/">https://www.instagram.com/</a></td>
               <td>test123</td>
               <td>passw0rd123!<button class="btn btn-danger ms-3">Copy</button></td>
@@ -22,17 +30,19 @@
               <td><a href="https://www.instagram.com/">https://www.instagram.com/</a></td>
               <td>test123</td>
               <td>passw0rd123!<button class="btn btn-danger ms-3">Copy</button></td>
-            </tr>
-            <tr>
-              <td><a href="https://www.instagram.com/">https://www.instagram.com/</a></td>
-              <td>test123</td>
-              <td>passw0rd123!<button class="btn btn-danger ms-3">Copy</button></td>
-            </tr>
-          </tbody>
+            </tr> --}}
+        {{/each}}
+        </tbody>
         </table>
+        <a class="btn btn-danger margin-auto" href="dashboard/new">Add Password</a>
         {{else}}
-        <a href="/login">You must login first to view saved passwords.</a>
+        <p>Your dashboard is empty. Click the button below to add a password.</p>
+        <a class="btn btn-danger text-align-center" href="dashboard/new">Add Password</a>
         {{/if}}
+        {{!-- TODO bring this back after session works --}}
+        {{!-- {{else}} --}}
+        {{!-- <a href="/login">You must login first to view saved passwords.</a> --}}
+        {{!-- {{/if}} --}}
       </div>
     </div>
   </div>
