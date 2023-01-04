@@ -5,7 +5,8 @@ This project solves the issue of keeping track of passwords related to certain a
 
 ## Installation
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+To use our application please visit: 
+<br>Login or Signup to use or applicationl.
 
 ## Usage
 
@@ -15,14 +16,14 @@ These screenshots show images of our webpage/application.
 ## Credits
 
 The following contributed to this project:
-Anthony Cedrone:
-https://github.com/antced
-Alexander Barlow:
-https://github.com/AlexanderBarlow
-Connor Cho:
-https://github.com/connorcho66
-Rahel Hailu:
-https://github.com/ririhailu
+<br><span style='color: white;'>**Anthony Cedrone**<span>:
+<br>https://github.com/antced
+<br>**Alexander Barlow**:
+<br>https://github.com/AlexanderBarlow
+<br>**Connor Cho**:
+<br>https://github.com/connorcho66
+<br>**Rahel Hailu**:
+<br>https://github.com/ririhailu
 
 ## Features
 
