@@ -9,7 +9,7 @@ async function loginFormHandler(event){
     const password = document.querySelector('#password').value.trim();
 
     if (userName && password) {
-        const response = await fetch('/login', {
+        const response = await fetch('api/users/login', {
             method: 'POST',
             body: JSON.stringify({ userName, password }),
             headers: { 'Content-Type': 'application/json' },
@@ -18,7 +18,7 @@ async function loginFormHandler(event){
         if (response.ok) {
             document.location.replace('/dashboard');
         } else {
-            alert('Invalid Login Information!');
+            alert(response.statusText);
         }
     }
 };
