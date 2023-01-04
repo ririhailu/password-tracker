@@ -1,5 +1,4 @@
 const logoutBtn = document.querySelector('#logout');
-logoutBtn.addEventListener('click', logout);
 
 const logout = async () => {
     const response = await fetch('/api/users/logout', {
@@ -13,3 +12,5 @@ const logout = async () => {
         alert('Logout Failed.')
     }
 };
+
+logoutBtn.addEventListener('click', logout);
