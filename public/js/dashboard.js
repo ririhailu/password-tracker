@@ -35,20 +35,15 @@ async function copyPassword(event) {
     if (event.target.hasAttribute('data-id')) {
         const id = event.target.getAttribute('data-id');
 
-        const response = await fetch(`/dashboard/copy/${id}`, {
-            method: 'GET',
-        });
-
-        if (response.ok) {
-            console.log(response)
-            navigator.clipboard.writeText(JSON.parse(response)).then(function () {
-                alert('Copying to clipboard was successful!');
-            }, function (err) {
-                alert('Could not copy text. ', err);
-            });
-        } else {
-            alert('Failed to delete password');
-        }
+        const response = await fetch(`/dashboard/copy/${id}`).then((response) => {
+            response.json().then((data => {
+                navigator.clipboard.writeText(data).then(function () {
+                    alert('Copying to clipboard was successful!');
+                }, function (err) {
+                    alert('Could not copy text. ', err);
+                });
+            }))
+        })
     }
 };
 

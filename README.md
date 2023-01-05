@@ -6,13 +6,17 @@ This project solves the issue of keeping track of passwords related to certain a
 ## Installation
 
 To use our application please visit: 
-<br>Login or Signup to use or applicationl.
+<br>Login or Signup to use or application.
 
 ## Usage
 
 These screenshots show images of our webpage/application.
 
-![alt text](assets/images/screenshot.png)
+![alt text](./images/localhost_3001_login.png)
+![alt text](./images/localhost_3001_signup.png)
+![alt text](./images/localhost_3001_dashboard.png)
+![alt text](./images/localhost_3001_dashboard%20(1).png)
+![alt text](./images/localhost_3001_dashboard_new.png)
 ## Credits
 
 The following contributed to this project:
@@ -32,4 +36,4 @@ check-password-strength, connect-session-sequelize, dotenv, express, express-han
 
 ## How to Contribute
 
-To contribute please contact and of the current contributors listed above.
+To contribute please contact any of the current contributors listed above.
