@@ -5,7 +5,8 @@ const crypto = require('crypto');
 
 router.get('/', async (req, res) => {
     console.log(req.session.user_id)
-    Passwords.findAll({ where: { user_id: req.session.user_id },
+    Passwords.findAll({
+        where: { user_id: req.session.user_id },
         attributes: ['id', 'username', 'user_id', 'password', 'title', 'initVector', 'securityKey']
     }
     ).then(passwordDB => {
@@ -37,14 +38,15 @@ router.post('/new', async (req, res) => {
     // output encoding
     let encryptedData = cipher.update(message, "utf-8", "hex");
     encryptedData += cipher.final("hex");
+    console.log(initVector, securityKey)
 
     try {
         const newPassword = await Passwords.create({
             username: req.body.username,
             title: req.body.title,
             password: encryptedData,
-            initVector: JSON.stringify(initVector),
-            securityKey: JSON.stringify(securityKey),
+            initVector: initVector.toString('hex'),
+            securityKey: securityKey.toString('hex'),
             user_id: req.session.user_id,
         });
         // const newPassword = await Passwords.create({
@@ -58,6 +60,30 @@ router.post('/new', async (req, res) => {
     }
 })
 
-router.
+router.get('/copy/:title', async (req, res) => {
+    Passwords.findAll({
+        where: { user_id: req.session.user_id, title: req.params.title},
+        attributes: ['id', 'username', 'user_id', 'password', 'title', 'initVector', 'securityKey']
+    }
+    ).then(passwordDB => {
+        const password = passwordDB.map(password => password.get({ plain: true }));
+        // console.log(Buffer.from(password[0].initVector, 'hex'));
+        const securityKey = Buffer.from(password[0].securityKey, 'hex');
+        const initVector = Buffer.from(password[0].initVector, 'hex');
+        const encryptedData = password[0].password;
+        const algorithm = "aes-256-cbc";
+
+        console.log(securityKey, initVector);
+
+        // the decipher function
+        const decipher = crypto.createDecipheriv(algorithm, securityKey, initVector);
+
+        let decryptedData = decipher.update(encryptedData, "hex", "utf-8");
+
+        decryptedData += decipher.final("utf8");
+
+        console.log("Decrypted message: " + decryptedData);
+    })
+})
 
 module.exports = router;
