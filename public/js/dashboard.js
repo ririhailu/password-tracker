@@ -9,6 +9,7 @@ const copyBtn = document.querySelectorAll('.Copy');
 
 async function deletePassword(event) {
     console.log('delete');
+    
     if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
 
@@ -17,7 +18,7 @@ async function deletePassword(event) {
     });
 
     if (response.ok) {
-        document.location.replace('profile');
+        document.location.replace('/');
     } else {
         alert('Failed to delete project');
     }
