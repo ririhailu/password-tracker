@@ -2,7 +2,6 @@
   <div class="container-fluid">
     <div class="row justify-content-center">
       <div class="col-5">
-        {{!-- TODO bring this back after session works --}}
         {{#if loggedIn}}
         <table class="table table-striped m-0 border">
           {{#if password}}
@@ -20,7 +19,7 @@
             <tr>
               <td><a href="{{this.title}}">{{this.title}}</a></td>
               <td>{{this.username}}</td>
-              <td type="password">{{this.password}}<button class="btn btn-danger ms-3" id="Copy">Copy</button></td>
+              <td type="password">●●●●●●●●<button class="btn btn-danger ms-3" id="Copy">Copy</button></td>
               <td><button class="btn btn-danger ms-3" id="Update">Update</button></td>
               <td><button class="btn btn-danger ms-3" id="Delete">Delete</button></td>
             </tr>
@@ -43,7 +42,6 @@
         <p>Your dashboard is empty. Click the button below to add a password.</p>
         <a class="btn btn-danger text-align-center" href="dashboard/new">Add Password</a>
         {{/if}}
-        {{!-- TODO bring this back after session works --}}
         {{else}}
         <a href="/login">You must login first to view saved passwords.</a>
         {{/if}}
