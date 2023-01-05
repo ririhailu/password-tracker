@@ -1,10 +1,15 @@
 const { Model, DataTypes } = require('sequelize');
 const { createHmac } = import('node:crypto');
+const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
+
 class User extends Model {
-   
-}
+    checkPassword(loginPw) {
+        console.log(loginPw);
+      return bcrypt.compareSync(loginPw, this.user_password);
+    }
+  }
 
 User.init(
     {
@@ -28,13 +33,20 @@ User.init(
     },
     {
         hooks: {
-
-        },
+            beforeCreate: async (newUserData) => {
+              newUserData.user_password = await bcrypt.hash(newUserData.user_password, 10);
+              return newUserData;
+            },
+            beforeUpdate: async (updatedUserData) => {
+              updatedUserData.user_password = await bcrypt.hash(updatedUserData.user_password, 10);
+              return updatedUserData;
+            },
+          },
         sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'User',
+        modelName: 'user',
 
     }
 );

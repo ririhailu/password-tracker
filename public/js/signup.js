@@ -1,24 +1,23 @@
-const login = document.querySelector('.loginForm');
-console.log(login);
-login.addEventListener('submit', loginFormHandler);
+const signup = document.querySelector('.signUpForm');
+signup.addEventListener('submit', signupFormHandler);
 
-async function loginFormHandler(event){
+async function signupFormHandler(event){
     event.preventDefault();
 
     const userName = document.querySelector('#username').value.trim();
     const password = document.querySelector('#password').value.trim();
 
     if (userName && password) {
-        const response = await fetch('api/users/login', {
+        const response = await fetch('/api/users/', {
             method: 'POST',
             body: JSON.stringify({ userName, password }),
             headers: { 'Content-Type': 'application/json' },
         });
 
         if (response.ok) {
-            document.location.replace('/dashboard');
+            document.location.replace('/dashboard')
         } else {
-            alert("Invalid Login Credentials");
+            alert('Invalid field input. Please try again.');
         }
     }
 };
