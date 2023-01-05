@@ -60,9 +60,9 @@ router.post('/new', async (req, res) => {
     }
 })
 
-router.get('/copy/:title', async (req, res) => {
+router.get('/copy/:id', async (req, res) => {
     Passwords.findAll({
-        where: { user_id: req.session.user_id, title: req.params.title},
+        where: { user_id: req.session.user_id, id: req.params.id},
         attributes: ['id', 'username', 'user_id', 'password', 'title', 'initVector', 'securityKey']
     }
     ).then(passwordDB => {
@@ -72,17 +72,11 @@ router.get('/copy/:title', async (req, res) => {
         const initVector = Buffer.from(password[0].initVector, 'hex');
         const encryptedData = password[0].password;
         const algorithm = "aes-256-cbc";
-
-        console.log(securityKey, initVector);
-
         // the decipher function
         const decipher = crypto.createDecipheriv(algorithm, securityKey, initVector);
-
         let decryptedData = decipher.update(encryptedData, "hex", "utf-8");
-
         decryptedData += decipher.final("utf8");
-
-        console.log("Decrypted message: " + decryptedData);
+        res.status(200).json(decryptedData)
     })
 })
 

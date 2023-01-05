@@ -3,9 +3,9 @@
     <div class="row justify-content-center">
       <div class="col-5">
         {{#if loggedIn}}
-        <table class="table table-striped m-0 border">
+        <table class="table table-striped m-0 border table-hover">
           {{#if password}}
-           <thead>
+          <thead class="thead-dark">
             <tr>
               <th class="text-white bg-danger" scope="col">Website</th>
               <th class="text-white bg-danger" scope="col">Username</th>
@@ -15,13 +15,14 @@
             </tr>
           </thead>
           <tbody>
-          {{#each password}}
+            {{#each password}}
             <tr class="buttonList">
               <td>{{this.title}}</td>
               <td>{{this.username}}</td>
-              <td type="password">●●●●●●●●<button class="btn btn-danger ms-3 copy">Copy</button></td>
-              <td><button class="btn btn-danger update">Update</button></td>
-              <td><button class="btn btn-danger delete">Delete</button></td>
+              <td type="password" href="/passwords/{{password.id}}">●●●●●●●●<button data-id="{{this.id}}"
+                  class="btn btn-danger ms-3 Copy">Copy</button></td>
+              <td><button class="btn btn-danger ms-3 update">Update</button></td>
+              <td><button data-id="{{this.id}}" class="btn btn-danger ms-3 delete">Delete</button></td>
             </tr>
             {{!-- This is just extra table content to test appearance --}}
             {{!-- <tr>
@@ -34,8 +35,8 @@
               <td>test123</td>
               <td>passw0rd123!<button class="btn btn-danger ms-3">Copy</button></td>
             </tr> --}}
-        {{/each}}
-        </tbody>
+            {{/each}}
+          </tbody>
         </table>
         <a class="btn btn-danger margin-auto" href="dashboard/new">Add Password</a>
         {{else}}
