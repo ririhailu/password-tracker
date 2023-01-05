@@ -1,0 +1,26 @@
+<section class="container-fluid">
+    <section class="row justify-content-center">
+      <section class="col-3 p-5 bg-white border rounded align-self-center">
+        <h2>Update Password</h2>
+        <p class="text-secondary">Add a new password and information about the account it belongs to.</p>
+        <form class="newPasswordForm" id="update" data-id='{{this.id}}'>
+          <div class="mb-3">
+            <label class="form-label">Website Name</label>
+            <input id='title' type="website" class="form-control" id="website">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Username</label>
+            <input id='username' type="username" class="form-control" id="username">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input id='password' type="password" class="form-control" id="password">
+          </div>
+          <button type="submit" class="btn btn-primary">Update Password</button>
+          </p>
+        </form>
+      </section>
+    </section>
+  </section>
+
+  <script src="/js/update.js"></script>
