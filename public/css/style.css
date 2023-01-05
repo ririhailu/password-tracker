@@ -9,8 +9,7 @@ body {
 }
 
 .nav {
-    /* margin: 0; */
-    padding: 3px 8px;
+    width: 100%;
 }
 
 .dash {
@@ -70,3 +69,15 @@ body {
     padding: 3px 7px;
 }
 
+@media screen and (max-width: 600px) {
+
+    .navbar {
+        width: 100%;
+    }
+
+    .nav {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+}
