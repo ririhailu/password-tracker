@@ -36,4 +36,4 @@ check-password-strength, connect-session-sequelize, dotenv, express, express-han
 
 ## How to Contribute
 
-To contribute please contact and of the current contributors listed above.
+To contribute please contact any of the current contributors listed above.
