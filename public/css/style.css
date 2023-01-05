@@ -31,27 +31,18 @@ body {
     border-top-right-radius: 5px;
 }
 
-.info {
+.buttonList {
     background-color: white;
 }
 
 .web,
 .name,
 .password,
-.bt1,
-.delete{
+.updateB,
+.deleteB{
     border-left: solid .7px #ccc;
     border-right: solid .7px #ccc;
     border-bottom: solid .7px #ccc;
-}
-
-#web{
-    text-decoration: none;
-    color: black;
-}
-
-#web:hover {
-    color: #dc3545;
 }
 
 .password {
