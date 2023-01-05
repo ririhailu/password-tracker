@@ -12,6 +12,8 @@
               <th class="text-white bg-danger" scope="col">Website</th>
               <th class="text-white bg-danger" scope="col">Username</th>
               <th class="text-white bg-danger" scope="col">Password</th>
+              <th class="text-white bg-danger" scope="col">Update</th>
+              <th class="text-white bg-danger" scope="col">Delete</th>
             </tr>
           </thead>
           <tbody>
@@ -19,7 +21,9 @@
             <tr>
               <td><a href="{{this.title}}">{{this.title}}</a></td>
               <td>{{this.username}}</td>
-              <td type="password">{{this.password}}<button class="btn btn-danger ms-3">Copy</button></td>
+              <td type="password">{{this.password}}<button class="btn btn-danger ms-3" id="Copy">Copy</button></td>
+              <td><button class="btn btn-danger ms-3" id="Update">Update</button></td>
+              <td><button class="btn btn-danger ms-3" id="Delete">Delete</button></td>
             </tr>
             {{!-- This is just extra table content to test appearance --}}
             {{!-- <tr>
@@ -48,3 +52,5 @@
     </div>
   </div>
 </section>
+
+<script src="/js/dashboard.js"></script>
