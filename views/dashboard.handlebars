@@ -2,7 +2,6 @@
   <div class="container-fluid">
     <div class="row justify-content-center">
       <div class="col-5">
-        {{!-- TODO bring this back after session works --}}
         {{#if loggedIn}}
         <table class="table table-striped m-0 border">
           {{#if password}}
@@ -18,6 +17,7 @@
             <tr>
               <td><a href="{{this.title}}">{{this.title}}</a></td>
               <td>{{this.username}}</td>
+              {{!-- TODO make the password just 8 dotted characters instead of actual length, then upon clicking, copy the real password --}}
               <td type="password">{{this.password}}<button class="btn btn-danger ms-3">Copy</button></td>
             </tr>
             {{!-- This is just extra table content to test appearance --}}
@@ -39,7 +39,6 @@
         <p>Your dashboard is empty. Click the button below to add a password.</p>
         <a class="btn btn-danger text-align-center" href="dashboard/new">Add Password</a>
         {{/if}}
-        {{!-- TODO bring this back after session works --}}
         {{else}}
         <a href="/login">You must login first to view saved passwords.</a>
         {{/if}}
@@ -47,3 +46,5 @@
     </div>
   </div>
 </section>
+
+<script src="/js/dashboard.js"></script>
