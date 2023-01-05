@@ -20,7 +20,7 @@ router.get('/:id', async (req, res) => {
             res.status(404).json({ message: 'No password found with this id.'});
             return;
         }
-
+        
         res.status(200).json(passwordData);
     } catch (err) {
         res.status(500).json(err);
@@ -28,6 +28,7 @@ router.get('/:id', async (req, res) => {
 })
 
 router.delete('/:id', async (req, res) => {
+    console.log('hit delete route');
     try{
         const passwordData = await Passwords.destroy({
             where: {
