@@ -1,27 +1,40 @@
 <section>
-  <div class="container-fluid">
+  <div class="dash container-fluid">
     <div class="row justify-content-center">
-      <div class="col-5">
+      <div class="col-8">
         {{#if loggedIn}}
+<<<<<<< HEAD
+        <table class="table table-striped m-0">
+=======
         <table class="table table-striped m-0 border table-hover">
+>>>>>>> 034fb8e6ed4158f6bf86be61bb34355ad5dbd0b6
           {{#if password}}
            <thead class="thead-dark">
             <tr>
-              <th class="text-white bg-danger" scope="col">Website</th>
-              <th class="text-white bg-danger" scope="col">Username</th>
-              <th class="text-white bg-danger" scope="col">Password</th>
-              <th class="text-white bg-danger" scope="col">Update</th>
-              <th class="text-white bg-danger" scope="col">Delete</th>
+              <th class="head text-white bg-danger col-2" id="main" scope="col">Website</th>
+              <th class="text-white bg-danger col-3" id="main" scope="col">Username</th>
+              <th class="text-white bg-danger col-3" id="main" scope="col">Password</th>
+              <th class="text-white bg-danger col-1" id="main" scope="col">Update</th>
+              <th class="head-2 text-white bg-danger col-1" id="main"scope="col">Delete</th>
             </tr>
           </thead>
           <tbody>
           {{#each password}}
+<<<<<<< HEAD
+            <tr class="info">
+              <td class="web"><a id="web" href="{{this.title}}">{{this.title}}</a></td>
+              <td class="name">{{this.username}}</td>
+              <td class="password" type="password">●●●●●●●●<button class="btn btn-danger ms-3" id="Copy">Copy</button></td>
+              <td class="bt1"><button class="btn btn-danger ms-3" id="Update">Update</button></td>
+              <td class="delete"><button class="btn btn-danger ms-3" id="Delete">Delete</button></td>
+=======
             <tr class="buttonList">
               <td>{{this.title}}</td>
               <td>{{this.username}}</td>
               <td type="password" href="/passwords/{{password.id}}">●●●●●●●●<button class="btn btn-danger ms-3 Copy">Copy</button></td>
               <td><button class="btn btn-danger ms-3 update">Update</button></td>
               <td><button data-id="{{this.id}}" class="btn btn-danger ms-3 delete">Delete</button></td>
+>>>>>>> 034fb8e6ed4158f6bf86be61bb34355ad5dbd0b6
             </tr>
             {{!-- This is just extra table content to test appearance --}}
             {{!-- <tr>
@@ -37,7 +50,7 @@
         {{/each}}
         </tbody>
         </table>
-        <a class="btn btn-danger margin-auto" href="dashboard/new">Add Password</a>
+        <a class="passwordBtn btn btn-danger margin-auto" href="dashboard/new">Add Password</a>
         {{else}}
         <p>Your dashboard is empty. Click the button below to add a password.</p>
         <a class="btn btn-danger text-align-center" href="dashboard/new">Add Password</a>
@@ -48,6 +61,6 @@
       </div>
     </div>
   </div>
-</section>
+
 
 <script src="/js/dashboard.js"></script>
