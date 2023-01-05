@@ -22,6 +22,10 @@ router.get('/new', (req, res) => {
     res.render('new');
 });
 
+router.get('/update', (req, res) => {
+    res.render('update');
+});
+
 router.post('/new', async (req, res) => {
     const algorithm = "aes-256-cbc";
     // generate 16 bytes of random data

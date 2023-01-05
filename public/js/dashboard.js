@@ -1,11 +1,6 @@
-// const updateBtn = document.querySelectorAll('.Update');
+
 const deleteBtn = document.querySelectorAll('.delete');
 const copyBtn = document.querySelectorAll('.Copy');
-// updateBtn.addEventListener('click', updatePassword);
-
-// async function updatePassword(event) {
-   
-// };
 
 async function deletePassword(event) {
     console.log('delete');

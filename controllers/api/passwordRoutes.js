@@ -25,7 +25,7 @@ router.get('/:id', async (req, res) => {
     } catch (err) {
         res.status(500).json(err);
     }
-})
+});
 
 router.delete('/:id', async (req, res) => {
     console.log('hit delete route');
@@ -46,8 +46,30 @@ router.delete('/:id', async (req, res) => {
     } catch (err) {
         res.status(500).json(err);
     }
-})
+});
 
-
+router.put('/:id', async (req, res) => {
+    console.log('update route');
+    console.log(req.params.id);
+    
+    Passwords.update(
+        {
+            where: {
+              id: req.params.id,
+            },
+        },
+        {
+          password: req.body.password,
+          title: req.body.title,
+          username: req.body.username,
+        }
+        
+      )
+        .then((updatedPassword) => {
+          // Sends the updated book as a json response
+          res.json(updatedPassword);
+        })
+        .catch((err) => res.json(err));
+});
 
 module.exports = router;
