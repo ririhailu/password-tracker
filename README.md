@@ -15,8 +15,8 @@ These screenshots show images of our webpage/application.
 ![alt text](./images/localhost_3001_login.png)
 ![alt text](./images/localhost_3001_signup.png)
 ![alt text](./images/localhost_3001_dashboard.png)
-![alt text](./images/localhost_3001_dashboard%20(1).png)
 ![alt text](./images/localhost_3001_dashboard_new.png)
+![alt text](./images/localhost_3001_dashboard_info.png)
 ## Credits
 
 The following contributed to this project:
