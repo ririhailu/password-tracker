@@ -5,7 +5,7 @@
         {{#if loggedIn}}
         <table class="table table-striped m-0 border table-hover">
           {{#if password}}
-           <thead class="thead-dark">
+          <thead class="thead-dark">
             <tr>
               <th class="head text-white bg-danger col-2" id="main" scope="col">Website</th>
               <th class="text-white bg-danger col-3" id="main" scope="col">Username</th>
@@ -19,7 +19,7 @@
             <tr class="buttonList">
               <td class="web">{{this.title}}</td>
               <td class="name">{{this.username}}</td>
-              <td class="password" type="password" href="/passwords/{{password.id}}">●●●●●●●●<button class="btn btn-danger ms-3 Copy">Copy</button></td>
+              <td class="password" type="password" href="/passwords/{{password.id}}">●●●●●●●●<button class="btn btn-danger ms-3 Copy" data-id="{{this.id}}">Copy</button></td>
               <td class="updateB"><button class="btn btn-danger ms-3 update">Update</button></td>
               <td class="deleteB"><button data-id="{{this.id}}" class="btn btn-danger ms-3 delete">Delete</button></td>
             </tr>
@@ -34,8 +34,8 @@
               <td>test123</td>
               <td>passw0rd123!<button class="btn btn-danger ms-3">Copy</button></td>
             </tr> --}}
-        {{/each}}
-        </tbody>
+            {{/each}}
+          </tbody>
         </table>
         <a class="passwordBtn btn btn-danger margin-auto" href="dashboard/new">Add Password</a>
         {{else}}
