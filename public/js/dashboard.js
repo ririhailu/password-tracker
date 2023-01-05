@@ -17,9 +17,9 @@ async function deletePassword(event) {
     });
 
     if (response.ok) {
-        document.location.replace('profile');
+        document.location.replace('/');
     } else {
-        alert('Failed to delete project');
+        alert('Failed to delete password');
     }
    }
 };

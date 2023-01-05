@@ -1,5 +1,17 @@
-.navbar {
+/* For Buttons */
+.btn {
     color: blue !important;
     background-color: aliceblue !important;
+    border-color: blue
 };
 
+/* For NavBar */
+.navbar {
+    color: blue !important;
+    background-color: aliceblue !important
+};
+
+/* For Logout Link */
+#logout {
+    
+}

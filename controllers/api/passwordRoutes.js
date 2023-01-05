@@ -28,6 +28,7 @@ router.get('/:id', async (req, res) => {
 })
 
 router.delete('/:id', async (req, res) => {
+    console.log('hit delete route');
     try{
         const passwordData = await Passwords.destroy({
             where: {
