@@ -1,17 +1,17 @@
 <section>
   <div class="dash container-fluid">
     <div class="row justify-content-center">
-      <div class="col-8">
+      <div class="col-lg-8 col-md-12">
         {{#if loggedIn}}
         <table class="table table-striped m-0 border table-hover">
           {{#if password}}
-          <thead class="thead-dark">
+          <thead class="thead-dark scroll">
             <tr>
-              <th class="head text-white bg-danger col-2" id="main" scope="col">Website</th>
-              <th class="text-white bg-danger col-3" id="main" scope="col">Username</th>
-              <th class="text-white bg-danger col-3" id="main" scope="col">Password</th>
-              <th class="text-white bg-danger col-1" id="main" scope="col">Update</th>
-              <th class="head-2 text-white bg-danger col-1" id="main"scope="col">Delete</th>
+              <th class="head text-white bg-danger col-lg-2 col-md-2 col-sm-2" id="main" scope="col">Website</th>
+              <th class="text-white bg-danger col-lg-3 col-md-3 col-sm-3" id="main" scope="col">Username</th>
+              <th class="text-white bg-danger col-lg-3 col-md-3 col-sm-3" id="main" scope="col">Password</th>
+              <th class="text-white bg-danger col-lg-1 col-md-2 col-sm-2" id="main" scope="col">Update</th>
+              <th class="head-2 text-white bg-danger col-lg-1 col-md-2 col-sm-2" id="main"scope="col">Delete</th>
             </tr>
           </thead>
           <tbody>
@@ -49,5 +49,28 @@
     </div>
   </div>
 
+<style>
+  
+  @media screen and (max-width: 600px) {
+
+    .navbar {
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .dash {
+        padding-top: 100px;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        width: 750px;
+        z-index: 0;
+        /* height: 100%; */
+    }
+    
+  }
+</style>
 
 <script src="/js/dashboard.js"></script>
